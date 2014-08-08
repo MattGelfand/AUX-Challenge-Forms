@@ -3,22 +3,295 @@
 	-moz-font-smoothing:antialiased;
 	font-smoothing: antialiased;
 	box-sizing: border-box;
-
+	outline: 1px solid red;
 }
 
 body {
 	margin:0;
 	padding:0;
+	background: #B3E3FF;
+	line-height: 1.5;
 	font-family: Lucida Grande, Arial, Verdana, sans-serif;
 }
 
-	/* global */
 
-.container {
-	background: #B0E2FF;
-	padding:30px;
+ol, ul {
+	list-style: none;
+	margin:0;
+	padding:0;
 }
 
+/* global */
+
+.container {
+	max-width: 640px;
+	margin:0 auto;
+	padding:40px 0;
+}
+
+header {
+	background: #167893;
+    background: -webkit-linear-gradient(top, #167893, #125e77);
+    background: -o-linear-gradient(top, #167893, #125e77);
+    background: linear-gradient(top, #167893, #125e77);
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
+    border: 1px solid #146c86;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+ol {
+	counter-reset:li;  /*Initiate a counter */ 
+    margin-left:0;   /*Remove the default left margin*/ 
+    padding-left:0;   /*Remove the default left padding*/  
+}
+
+ol > li {
+	margin: 50px 0;
+	position:relative;
+	list-style-type: none;
+}
+
+ol > li:before {
+	content:counter(li);
+	counter-increment: li;
+	border:5px solid white;
+	background-color: #52a3d4;
+	border-radius: 20px;
+ 	position: absolute;
+ 	height: 30px;
+ 	width: 30px;
+ 	color:#fff;
+ 	font-weight: bold;
+ 	left: -60px;
+	top: -10px;
+	text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+ol, ul {
+	list-style: none; 
+}
+
+h1, legend {
+	font-family: 'Antic Slab', serif;
+}
+
+h1 {
+	font-size: 2.5em;
+	padding:30px 0 0 0;
+	color:#fff;
+	letter-spacing: -2px;
+	font-weight: bold;
+	margin:0;
+}
+
+h2 {
+	font-size: .8em;
+	padding:0 0 15px 0;
+	color:#B0E2FF;
+	font-weight: bolder;
+}
+
+form {
+	overflow: hidden;
+	background: #fff;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+fieldset {
+	border: none;
+	margin:0;
+	padding:0;
+	background: #f3f5f5;
+	border-radius: 8px;
+	margin-top: 75px;
+}
+
+fieldset label {
+	font-size: 13px;
+	opacity: .8;
+	display: block;
+	margin:20px 0;
+	padding:0;
+	font-weight: normal;
+}
+
+.form-inner {
+	padding:15px 50px;
+	overflow: hidden;
+}
+
+legend {
+	font-size: 19px;
+	color: #234b61;
+	font-weight: bold;
+	letter-spacing: -1px;
+	position: relative;
+	bottom: 20px;
+}
+
+input {
+	width: 100%;
+ 	border:none;
+ 	border-radius: 5px;
+	margin-top: 5px;
+	padding: 12px;
+ 	-webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+  	box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.email-note {
+	color: #9F9897;
+	font-weight: bolder;
+	font-size: 12px;
+	position: relative;
+	top: 4px;
+}
+
+#address {
+	width: 70%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	display: block;
+}
+
+.address-sample {
+	float: right;
+    width: 28%;
+    padding:12px 0;
+    background: #fafafa;
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    color:#9a9aa0;
+    position: relative;
+    bottom: 39.5px;
+    right: 10px;
+    z-index: -1;
+
+    -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+  	box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#number {
+	width: 50%;
+	float: left;
+}
+
+.cards {
+	float: right;
+	width: 47%;
+}
+
+#security {
+	float: left;
+	width: 20%;
+}
+
+.cvv {
+	float: left;
+	width: 20%;
+}
+
+.cards > label {
+	width: 45px;
+    height: 32px;
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    cursor: pointer; 
+    text-indent: -9999px;
+    margin: 0;
+    padding: 0; 
+    background-position: 0 -122px;
+}
+
+.cards, .cards label, .cards li input {
+	display: inline-block;
+}
+
+.cards .amex label {
+    background-position: 0 -164px; 
+}
+
+.cards #amex-button input:checked + label {
+    background-position:  0 -206px;
+}
+
+
+.cards .visa label {
+    background-position: -48px -206px;
+}
+
+.cards .visa input:checked + label {
+    background-position:  -48px -164px;
+}
+
+.cards .discover label {
+    background-position: -96px -248px; 
+}
+
+.cards .discover input:checked + label {
+    background-position: -96px -206px;
+}
+
+.cards .mastercard label {
+    background-position: -144px -290px;
+}
+
+.cards .mastercard input:checked + label {
+    background-position: -144px -248px;
+}
+
+
+input[type="radio"] {
+	position: absolute;
+	left: -9999px;
+}
+
+.button {
+	text-align: center;
+	margin:50px 0;
+	width: 250px;
+	margin:0 auto;
+	padding:5px 0 45px 0;
+}
+
+.btn {
+	height: 40px;
+	padding:5px 0;
+	color:#fafafa;
+	font-size: 18px;
+	font-family: 'Antic Slab', serif;
+	font-weight: bolder;
+	margin:0 auto;
+	cursor: pointer;
+	background: -webkit-linear-gradient(top, #90a933, #7b992b);
+	background: -moz-linear-gradient(top, #90a933, #7b992b);
+	background: -ms-linear-gradient(top, #90a933, #7b992b);
+	background: -o-linear-gradient(top, #90a933, #7b992b);
+	background: linear-gradient(top, #90a933, #7b992b);
+	border: 1px solid #7b992b;
+	-webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.contain {
+	padding:0 40px;
+}
+
+
+
+/*
 
 .form-body {
 	max-width: 640px;
@@ -28,19 +301,11 @@ body {
 }
 
 
-header {
-	background: #167893;
-    background: -webkit-linear-gradient(top, #167893, #125e77);
-    background: -o-linear-gradient(top, #167893, #125e77);
-    background: linear-gradient(top, #167893, #125e77);
-    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
-    border: 1px solid #146c86;
-}
 
 ol {
-	counter-reset:li; /* Initiate a counter */
-    margin-left:0; /* Remove the default left margin */
-    padding-left:0; /* Remove the default left padding */
+	counter-reset:li;  Initiate a counter  
+    margin-left:0;   Remove the default left margin  
+    padding-left:0;   Remove the default left padding  
 }
 
 ol > li {
@@ -63,20 +328,22 @@ ol > li:before {
  	left: -20px;
 	top: -10px;
 	text-align: center;
+    line-height: 28px;
+    font-size: 14px;
 }
 
 ol, ul {
 	list-style: none; 
 }
 
-	/*typography */
-.h1, h3 {
+	 
+h1, h3 {
 	font-family: 'Antic Slab', serif;
 }
 
 
-.h1 {
-	font-size: 3em;
+h1 {
+	font-size: 2.5em;
 	padding:30px 0 0 0;
 	color:#fff;
 	letter-spacing: -2px;
@@ -84,51 +351,52 @@ ol, ul {
 	margin:0;
 }
 
-.h4 {
+h2 {
 	font-size: .8em;
 	padding:0 0 15px 0;
 	color:#B0E2FF;
 	font-weight: bolder;
 }
 
-.legend {
+legend {
 	font-size: 19px;
 	color: #234b61;
 	font-weight: bold;
 	letter-spacing: -1px;
 	font-family: 'Antic Slab', serif;
-	margin-bottom: 13px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 
 
-/* form elements */
+ 
 
 form {
 	border-radius: 5px;
-}
-
-.form {
-	margin:0 auto;
+    margin:0 auto;
 }
 
 fieldset {
 	border: 0;
 	margin:0 auto;
 	max-width: 550px;
-	background: #f5f5f5;
+	background: #f3f5f5;
 	position: relative;
 	border-radius:12px;
+	padding: 15px 30px;
 }
 
 fieldset > div {
-	padding: 20px;
+	padding: 8px;
+	margin:8px 0;
 }
 
 label {
-	display: block;
 	margin-bottom:10px;
 	padding:0;
 	font-size: 13px;
+	display: block;
 }
 
 input {
@@ -138,19 +406,14 @@ input {
   	box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.15);
  	border:none;
  	border-radius: 5px;
+ 	margin-top: 5px;
+ 	position: relative;
 }
 
 .dropdowns {
 	margin:0;
-}
-
-#dropdowns {
-	position: relative;
-	left: -3px;
-}
-
-#security {
-	width: 20%;
+    position: relative;
+    left: -3px;
 }
 
 .btn {
@@ -181,7 +444,7 @@ input {
 }
 
 .paypal {
-	font-size: 15px;
+	font-size: 14px;
 	margin-left: 100px;
 	text-decoration: none;
 	color:#72d0ff;
@@ -200,48 +463,40 @@ input {
 	font-size: 11px;
 }
 
-#sample {
-	display: inline-block;
-	width: 28%;
-	padding:8px;
-	background: #f2f2f2;
-	border-top-left-radius: 0; 
-	border-bottom-left-radius: 0; 
-	font-size: 14px;
-	letter-spacing: 2px;
-	font-weight: bold;
-	text-align: center;
-	color:#9a9aa0;
-	position: relative;
-	right: 6px;
+#security {
+    width: 20%;
+    display: block;
 }
 
 #address {
 	width: 70%;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	display: inline-block;
+	display: block;
 }
 
-	/*sprites*/
-
-.cards {
-	margin:0;
-	padding:0;
+.sample {
+    position: absolute;
+    width: 28%;
+    padding:13px 0;
+    bottom: 10px;
+    right: 10px;
+    background: #fafafa;
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    color:#9a9aa0;
 }
+
+ 
+
+
 
 .card-list li, .card-list li label, .card-list li input {
 	display: inline-block;
-}
-
-.card-list {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	position: re;
-	position: relative;
-	bottom: 20px;
-	left: 20px;
 }
 
 .card-list li > label {
@@ -254,15 +509,19 @@ input {
     margin: 0;
     padding: 0; 
     background-position: 0 -122px;
-    /*image-text replacement*/
+ 
 }
 
 #number {
+	display: block;
 	width: 50%;
 	float: left;
-	vertical-align: bottom;
 }
 
+.card-list {
+	float: left;
+	width: 50%;
+}
 
 .card-list .amex label {
     background-position: 0 -164px; 
@@ -312,25 +571,16 @@ input[type="radio"] {
 }
 
 
-#security-icon {
+.security-icon {
   	background: url('../img/sprite.png') no-repeat -60px -499px;
 	width: 14px;
 	height: 19px;
 	float: right;
-	position: absolute;
-	bottom: 15px;
-	right: 15px;
+	
 }
 
-/*validate styling*/
+ 
 
-input:required {
-
-}
-
-input:valid {
-
-}
 
 input:invalid:focus {
  	border-radius:5px;
@@ -340,16 +590,12 @@ input:valid:focus {
 	border-radius:5px;
  }
 
- .validInvalid {
- 	margin-bottom: 30px;
- }
-
 .error {
 	display: block;
 	margin-top:10px;
 	color:red;
 }
-	/* objects */
+ 
 
 .contain {
 	padding:0 50px;
@@ -360,4 +606,11 @@ input:valid:focus {
 input:title {
 	display: none;
 }
+
+.hidden {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0;
 

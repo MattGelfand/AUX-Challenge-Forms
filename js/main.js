@@ -1,81 +1,20 @@
+if (!Modernizr.input.required) {
 
-$(document).ready(function(){
-   $("form").validate({
-        errorPlacement: function(error, element) {
-                error.appendTo("label[for="+$(element).attr('id')+"]");
-        },
-        errorElement: "em"
-   });
-   $('form').removeAttr('novalidate');
-});
-
-
-
-
-/*$(document).ready(function() {
-  $('form').validate({
-    rules: {
-      title: {
-        required:true
-      },
-
-      address: {
-        required:true
-      },
-
-      name: {
-        required:true
-      },
-
-      email: {
-        required:true,
-        email:true
-      },
-
-      password: {
-        required:true,
-        minlength:4
-      },
-
-      number: {
-        required:true,
-        maxlength:16,
-        minlength:16,
-        number:true
-      },
-
-      security: {
-        required:true,
-        maxlength:4,
-        number:true
-      },
-    }
-  });
-});
-
-
-
-
-
-/*if (!Modernizr.input.required) {
-   
 Modernizr.load([
-  {
-    load: 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js',
-    complete: function () {
-      if ( !window.jQuery ) {
-            Modernizr.load('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
-      }
-    }
+{
+  load: 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js',
+  $(document).ready(function(){
+    $("form").validate({
+      errorPlacement: function(error, element) {
+      error.appendTo("label[for="+$(element).attr('id')+"]");
   },
-  {
-    // This will wait for the fallback to load and
-    // execute if it needs to.
-    load: 'needs-jQuery.js'
-  }
+    errorElement: "em"
+  });
+  $('form').removeAttr('novalidate');
+  });
 ]);
- }
+}
 
-*/
+
 
  
