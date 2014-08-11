@@ -15,7 +15,7 @@
 			<h2>50 Projects, 500 images, 10 videos, domain binding, and technical support.</h2>
 		</header>
 
-		<form role="form" class="contain" action="" method="get">
+		<form role="form" action="" method="get" class="whoo-form">
 			<ol>
 				<li>
 					<fieldset class="portfolio-name">
@@ -23,12 +23,12 @@
 						<div class="form-inner">
 							<label>
 								Portfolio Title
-								<input type="text" name="title" aria-labelledby="portfolio-name" aria-required="true">
+								<input required type="text" name="title" id="title" aria-labelledby="portfolio-name" aria-required="true">
 							</label>
 							
 							<label>
 								Portfolio Address
-								<input type="url" name="address" aria-required="true" id="address">
+								<input required type="url" name="address" aria-required="true" id="address">
 								<span class="address-sample">
 								sample.com
 							</label>
@@ -43,18 +43,18 @@
 						<div class="form-inner">
 							<label>
 								Name
-								<input type="text" name="name" pattern="[a-zA-Z]+" aria-labelledby="account-details" aria-required="true">
+								<input required type="text" name="name" id="name" pattern="[a-zA-Z]+" aria-labelledby="account-details" aria-required="true">
 							</label>
 
 							<label>
 								Email
-								<input type="email" name="email" pattern="[a-zA-Z]+" aria-labelledby="email-address" aria-required="true">
+								<input required type="email" name="email" id="email" aria-labelledby="email-address" aria-required="true">
 									<span class="email-note">NOTE: We'll never share your email, promise.</span>
 							</label>
 
 							<label>
 								Password
-								<input required type="password" name="password" minlength="4" aria-required="true">
+								<input required type="password" name="password" id="password" minlength="6" aria-required="true">
 							</label>
 						</div>
 					</fieldset>
@@ -62,12 +62,11 @@
 
 				<li>
 					<fieldset class="portfolio-info">
-						<legend>Finally, enter your account information</legend>
+						<legend>Finally, enter your account information<a class="paypal" href="https://www.paypal.com/home">Use Paypal</a></legend>
 						<div class="form-inner">
-							<label>
-								Card Number
+							<label for="number">Card Number</label>
 							<input required type="text" name="number" id="number" pattern="[0-9]{13,16}" maxlength="16" aria-labelledby="paymentInfo" aria-required="true">
-							</label>
+							
 							
 							<fieldset class="cards">				  	
 							  	<input type="radio" name="card-type" value="american-express" id="amex-button">
@@ -83,18 +82,20 @@
 							  	<label for="mastercard" class="mastercard">Mastercard</label>
 							</fieldset>
 
-							<label>
-								Security Code
-								<input required type="text" name="security" id="security" maxlength="4" pattern="[0-9]{0,4}" aria-required="true">
-							</label>
+							<fieldset>
+								<label for="security">Security Code</label>
+									<input required type="text" name="security" id="security" maxlength="4" pattern="[0-9]{0,4}" aria-required="true">
 
-							<label class="cvv">
-								<input type="text">	
-							</label>
+								<div class="cvv">
+									<label id="cvv" aria-describedby="cvv-note"></label>
+									<label id="cvv-amex" aria-describedby="cvv-amex-note"></label>
+								</div>
+							</fieldset>
 
 							<fieldset class="portfolio-exp">
 								<label>
 									Expiration Date
+								</label>
 									<select name="month" class="dropdowns" aria-required="true">
 										<option value="00" disabled selected>Month</option>
 										<option value="01">January</option>
@@ -110,9 +111,8 @@
 										<option value="11">November</option>
 										<option value="12">December</option>
 									</select>
-								</label>
+								
 
-								<label>
 									<select name="year" class="dropdowns" aria-required="true">
 										<option value="00" disabled selected>Year</option>
 										<option value="01">2014</option>
@@ -120,7 +120,7 @@
 										<option value="03">2016</option>
 										<option value="04">2017</option>
 									</select>
-								</label>
+								
 
 								<label for="security-icon">
 									<div class="security-icon" name="security-icon" aria-describedby="secure-icon"></div>
@@ -136,156 +136,9 @@
 			</div>	
 		</form>
 	</div><!--end container-->
-
-
-
-
-
-		<!--<div class="form-body">
-			<header class="contain" role="banner">
-				<h1>Sign up for Whoo!</h1>
-				<h2>50 Projects, 500 images, 10 videos, domain binding, and technical support.</h2>
-			</header>
-			
-			<form action="#" method="post" class="form" role="form">
-
-				<ol>
-					<li>
-						<fieldset>	
-							<legend id="portfolio-name">First, Name Your Portfolio</legend>
-							<div>
-								<label for="title">Portfolio Title
-								<input required type="text" name="title" id="title" aria-labelledby="portfolio-name" aria-required="true">
-								</label>
-							</div>
-							
-							<div>
-								<label for="address">Portfolio Address
-								<input required type="url" name="address" id="address" aria-required="true">
-								<span class="sample">.sample.com</span>
-								</label>
-							</div>
-
-						</fieldset>
-					</li>
-
-					<li>
-						<fieldset>
-							<legend id="account-details">Now, enter your account details</legend>
-							<div>
-								<label for="name">Name
-								<input required type="text" name="name" id="name" pattern="[a-zA-Z]+" title="You have a name, don't you?" aria-labelledby="account-details" aria-required="true">
-								</label>
-							</div>
-							
-							<div>
-								<label for="email">Email
-								<input required type="email" name="email" id="email" title="You must provide a valid email address" aria-describedby="note" aria-required="true">
-								<span class="note">NOTE: We'll never share your email, promise.</span>
-								</label>
-							</div>
-							
-							<div>
-								<label for="password">Password
-								<input required type="password" name="password" id="password" title="Must be at least four characters" minlength="4" aria-required="true">
-								</label> 
-							</div> 
-
-						</fieldset>
-					</li>
-
-					<li>
-						<fieldset>
-							<legend id="paymentInfo">Finally, enter your payment information</legend>
-							
-							<div>
-								<label for="number">Card number
-								<input required type="text" name="number" id="number" pattern="[0-9]{13,16}" maxlength="16" aria-labelledby="paymentInfo" aria-required="true">
-								</label>
-							
-
-                                <ul class="card-list">
-                                    <li class="amex">
-                                        <input type="radio" name="card" id="amex" />
-                                        <label for="amex">American Express</label>
-                                    </li>
-                                    <li class="visa">
-                                        <input type="radio" name="card" id="visa" />
-                                        <label for="visa">Visa</label>
-                                    </li> 
-                                    <li class="discover">
-                                        <input type="radio" name="card" id="discover" />
-                                        <label for="discover">Discover</label>
-                                    </li>
-                                    <li class="mastercard">
-                                        <input type="radio" name="card" id="mastercard" />
-                                        <label for="mastercard">Mastercard</label>
-                                    </li>
-                                </ul>
-                            </div>
-							
-						
-							<div>
-	                            <label for="security">Security code
-								<input required type="text" name="security" id="security" maxlength="4" pattern="[0-9]{0,4}" title="On the back of your card" aria-required="true">
-								</label>
-								
-								<div class="cvv-img">
-									<label id="cvv" aria-describedby="cvv-note"></label>
-									<label class="hidden" id="cvv-note">This is a 3 digit code on the back of your Visa, Discover, or Mastercard credit card</label>
-									<label id="cvv-amex" aria-describedby="cvv-amex-note"></label>
-									<label class="hidden" id="cvv-amex-note">This is a 4 digit code on the front of your American Express credit card</label>
-								</div>
-							</div>
-							
-							
-							<fieldset>
-								<div class="dropdowns">
-									<label for="dropdown-month">Expiration date
-									<select name="month" id="dropdowns" aria-required="true">
-										<option value="00" disabled selected>Month</option>
-										<option value="01">January</option>
-										<option value="02">February</option>
-										<option value="03">March</option>
-										<option value="04">April</option>
-										<option value="05">May</option>
-										<option value="06">June</option>
-										<option value="07">July</option>
-										<option value="08">August</option>
-										<option value="09">September</option>
-										<option value="10">October</option>
-										<option value="11">November</option>
-										<option value="12">December</option>
-									</select>
-									</label>
-									
-									<label for="dropdown-year">
-									<select name="year" id="dropdowns" aria-required="true">
-										<option value="00" disabled selected>Year</option>
-										<option value="01">2014</option>
-										<option value="02">2015</option>
-										<option value="03">2016</option>
-										<option value="04">2017</option>
-									</select>
-									</label>
-								</div>
-							</fieldset>
-							
-							<label for="security-icon">
-								<div class="security-icon" name="security-icon" aria-describedby="secure-icon"></div>
-							</label>
-						
-						</fieldset>
-					</li>
-				</ol>
-
-
-				<div class="button">
-					<input class="btn" type="submit" name="submit" value="Create your portfolio">
-				</div>-->
-
-
+	
 <script src="js/validate.js"></script>
+<script src="js/jquery-validate.js"></script>
 <script src="js/main.js"></script>	
 </body>
 </html>

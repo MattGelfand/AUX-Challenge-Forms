@@ -3,8 +3,10 @@
 	-moz-font-smoothing:antialiased;
 	font-smoothing: antialiased;
 	box-sizing: border-box;
-	outline: 1px solid red;
+	/*outline: 1px solid red;*/
 }
+
+/* global */
 
 body {
 	margin:0;
@@ -15,13 +17,17 @@ body {
 }
 
 
-ol, ul {
+ul {
 	list-style: none;
 	margin:0;
 	padding:0;
 }
 
-/* global */
+a {
+	text-decoration: none;
+	margin:0;
+	padding:0;
+}
 
 .container {
 	max-width: 640px;
@@ -44,6 +50,7 @@ ol {
 	counter-reset:li;  /*Initiate a counter */ 
     margin-left:0;   /*Remove the default left margin*/ 
     padding-left:0;   /*Remove the default left padding*/  
+    margin-top:-50px;
 }
 
 ol > li {
@@ -64,7 +71,7 @@ ol > li:before {
  	color:#fff;
  	font-weight: bold;
  	left: -60px;
-	top: -10px;
+	top: -30px;
 	text-align: center;
     line-height: 28px;
     font-size: 14px;
@@ -95,26 +102,42 @@ h2 {
 }
 
 form {
-	overflow: hidden;
 	background: #fff;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	padding: 40px;
 }
 
 fieldset {
 	border: none;
-	margin:0;
 	padding:0;
 	background: #f3f5f5;
 	border-radius: 8px;
 	margin-top: 75px;
+	position: relative;
 }
+
+.portfolio-info label {
+	margin:0;
+	padding:0;
+}
+
+.portfolio-exp {
+	margin-top:40px;
+}
+
+select {
+	margin-top:10px;
+	position: relative;
+	right: 3px;
+}
+
 
 fieldset label {
 	font-size: 13px;
 	opacity: .8;
 	display: block;
-	margin:20px 0;
+	margin:10px 0 25px 0;
 	padding:0;
 	font-weight: normal;
 }
@@ -191,6 +214,8 @@ input {
 .cards {
 	float: right;
 	width: 47%;
+	margin-top:5px;
+	padding:0;
 }
 
 #security {
@@ -198,35 +223,108 @@ input {
 	width: 20%;
 }
 
-.cvv {
+#cvv {
 	float: left;
 	width: 20%;
-}
-
-.cards > label {
-	width: 45px;
-    height: 32px;
+	width: 70px;
+    height: 33px;
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
+    background-position: 0 -331px;
     cursor: pointer; 
-    text-indent: -9999px;
-    margin: 0;
-    padding: 0; 
-    background-position: 0 -122px;
 }
 
-.cards, .cards label, .cards li input {
+.cvv {
+	position: relative;
+	top: 7px;
+	left: 10px;
+}
+
+input[type="radio"] {
+	position: absolute;
+	left: -9999px;
+}
+
+.cards label {
+	text-indent: -9999px;
 	display: inline-block;
+	background: url('../img/sprite.png') no-repeat 0 0;
+	width: 45px;
+	height: 32px;
+	cursor: pointer;
 }
 
+.cards .amex {
+    background: url('../img/sprite.png') no-repeat 0 -206px;
+}
+
+.cards .amex:hover {
+	background-position: 0 -164px;
+}
+
+.cards .visa {
+	background: url('../img/sprite.png') no-repeat -48px -164px;
+}
+
+.cards .visa:hover {
+	background-position: -48px -122px;
+}
+
+.cards .discover {
+	background: url('../img/sprite.png') no-repeat -96px -206px;
+}
+
+.cards .discover:hover {
+	background-position: -96px -248px;
+}
+
+.cards .mastercard {
+	background: url('../img/sprite.png') no-repeat -144px -248px;
+}
+
+.cards .mastercard:hover {
+	background-position: -144px -290px;
+}
+
+
+/*
+#visa-button {
+	background: url('../images/sprite.png') no-repeat -48px -164px;
+	width: 45px;
+	height: 32px;
+}
+
+#visa-button:checked, #visa-button:hover {
+	background-position: -48px -122px;
+}
+
+#discover-button {
+	background: url('../images/sprite.png') no-repeat -96px -206px;
+	width: 45px;
+	height: 32px;
+}
+
+#discover-button:checked, #discover-button:hover {
+	background-position: -96px -122px;
+}
+
+#mastercard-button {
+	background: url('../images/sprite.png')no-repeat -144px -206px;
+	width: 45px;
+	height: 32px;
+}
+
+#mastercard-button:checked, #mastercard-button:hover {
+	background-position: -144px -122px;
+}
+/*
 .cards .amex label {
     background-position: 0 -164px; 
 }
 
-.cards #amex-button input:checked + label {
+.cards .amex input:checked + label {
     background-position:  0 -206px;
 }
-
 
 .cards .visa label {
     background-position: -48px -206px;
@@ -251,12 +349,7 @@ input {
 .cards .mastercard input:checked + label {
     background-position: -144px -248px;
 }
-
-
-input[type="radio"] {
-	position: absolute;
-	left: -9999px;
-}
+*/
 
 .button {
 	text-align: center;
@@ -283,6 +376,23 @@ input[type="radio"] {
 	border: 1px solid #7b992b;
 	-webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
 	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.security-icon {
+  	background: url('../img/sprite.png') no-repeat -60px -499px;
+	width: 14px;
+	height: 19px;
+	float: right;
+	position: relative;
+	left: 30px;
+	
+}
+
+.paypal {
+	margin-left: 120px;
+	font-size: 14px;
+	color:#72d0ff;
+	font-family:  Lucida Grande, Arial, Verdana, sans-serif;
 }
 
 .contain {
